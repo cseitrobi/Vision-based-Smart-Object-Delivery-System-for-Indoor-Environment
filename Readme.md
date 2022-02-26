@@ -149,7 +149,9 @@ We have created a file named “headshots_picam.py” inside the facial_recognit
 5.3.3 Train Images
 
 After taking images, we trained these images. After training these images, some information will be generated and overwritten (if necessary) in “encodings.pickle” file. 
+
 ![image](https://user-images.githubusercontent.com/10431781/155857443-887dde06-2484-4c8a-b69a-33a9a482329b.png)
+
 ![image](https://user-images.githubusercontent.com/10431781/155857446-9ddfef02-954d-41db-851a-f757c4fb813f.png)
 
 5.4	QR code scan with PI camera
