@@ -1,6 +1,8 @@
 # Raspberry Pi 3B+ Facial Recognition and QR code scan embedded with Arduino Mega which is used for line following.
 Hardware and software tools
+
 4.1 Design Tools
+
 To implement the project, we have used the following design tools. The design tools include the following list. 
 •	Arduino Mega 2560 Microcontroller
 •	L293D Motor Driver Shield
