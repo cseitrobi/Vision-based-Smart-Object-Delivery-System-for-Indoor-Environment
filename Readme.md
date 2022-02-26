@@ -1,4 +1,4 @@
-# Raspberry Pi 3B+ Facial Recognition and QR code scan embedded with larduino which is used for line following.
+# Raspberry Pi 3B+ Facial Recognition and QR code scan embedded with Arduino Mega which is used for line following.
 Hardware and software tools
 4.1 Design Tools
 To implement the project, we have used the following design tools. The design tools include the following list. 
@@ -73,8 +73,7 @@ sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvi
 sudo apt install libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
 sudo apt install libatlas-base-dev liblapacke-dev gfortran
 sudo apt install libhdf5-dev libhdf5-103
-5. 
-It will install pip and numpy of python3.
+5. It will install pip and numpy of python3.
 sudo apt install python3-dev python3-pip python3-numpy
 6. Expand the swap file before running the next commands. They need a larger swap file system to execute. We set the value from 100 to 2048.
 sudo nano /etc/dphys-swapfile
