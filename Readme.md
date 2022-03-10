@@ -27,15 +27,9 @@ To implement the project, we have used the following design tools. The design to
 
 •	Linux Terminal in Raspberry PI
 
-Initially, we solder the wires to four dc motors and then connect them to M1, M2, M3 and M4 pins of the L293D motor driver board. Then, place the L293D motor driver over the Arduino mega 2560 board. Then, the connection will be as below automatically –
- 
 
-![image](https://user-images.githubusercontent.com/10431781/155857399-5df557d6-d500-42f7-a6d8-6ebc11b95c6c.png)
-
-                                            Fig: Full line following robot setup
                                             
-4.3.2 Assembling procedure for Raspberry PI with a camera and object delivery box
-In this assembling procedure, we attach the camera’s flat cable to the raspberry PI first. Secondly, we connected the servo motor to the raspberry PI and put this servo motor inside the box. After that, this servo motor is responsible for opening the gate of the box. 
+
 
 ![image](https://user-images.githubusercontent.com/10431781/155857410-e89cd6c9-200d-472e-ac5e-f7f6f42e5946.png)
 
@@ -51,22 +45,6 @@ Implementation and Performance analysis
 We did our experimental setup in several ways. Firstly, we have done our line following part. Secondly, we set up our raspberry pi camera with a raspberry PI and it can detect a face. Here, we took a minimum of 10 pictures of each person for better accuracy and train those images by using the OpenCV built-in function. Thirdly, we scan different QR codes and analyze the timing response to scan them. The next part is, to set up the servo motor and make sure there’s no jitter issue happening. We set up the minimum pulse width, maximum pulse width values in servo motor configuration. And in the final step, we combine Arduino mega board with raspberry PI by connecting PI’s ground pin to Arduino ground pin and Arduino’s analog pin to GPIO18 (12th pin)
 
 
-5.2.1 Line following Part:
-
-We have installed the “AFmotor.h” library for the L293D motor driver shield. We call the constructor “AF_DCMotor” so that we can select front, back, left, right motors and customize as needed. AF_DCMotor also has a setSpeed() function. We set the speed of the motor 90, so that LFR can move slowly and detect authenticated person’s face. We put the value of the serial monitor to 9600 baud rate. 
-In the IR sensor portion, we took the analog value by placing the sensors on a white and black line. Then, we analyzed those values and wrote the code by following the flowchart.
-
-
-5.2.2 Flowchart for line following:
-
-Initially, 5 array IR sensors will take the reading of all sensors. If the sensor analog value is less than 500, it will count as a black line. If sensor 3 and sensor 4 read value less than 500; or sensor 2 and sensor 3 read value less than 500, then, it will go straight. If sensor 1 and senor 5 read value greater than 500, LFR goes to the straight line. If the value of the middle sensor means sensor 3’s reading value is less than 500, it will go straight. If the right side sensors see a black line, then LFR will go right. And finally, if the left sensors see the black line and the right sensors see the white line, LFR will go left. 
-![image](https://user-images.githubusercontent.com/10431781/155857429-0a369ceb-9913-4dad-9c4d-7d28b7a613eb.png)
-
-Fig: Line following robot flowchart
-
-5.3 Face recognition with Raspberry PI
-
-In this section, we will be able to configure a face recognition system and recognize an authenticated person’s face. That’s why we need to configure OpenCV.
 
 5.3.1OpenCV configuration
 
@@ -191,37 +169,4 @@ Initially, we need to run “pigpiod” and this utility runs in the background.
 Secondly, we moved to the facial_recognition folder from pi folder. We have a “Project.py” file. It includes the code for face recognition, QR code scan, servo motor’s operating code, RPI and Arduino combined working code.
 ![image](https://user-images.githubusercontent.com/10431781/155857494-a57d398d-5caf-4e4c-a49e-e1db5c8a4359.png)
 After executing this file from the terminal, one separate window will appear and ask for the authenticated face. After detecting the face, it’s ready to scan the QR code. Remember, there is a unique QR code for each person. If the wrong QR is scanned, the door will not open and the line following will be continued. 
-
-5.8	Performance analysis
-
-We changed some configurations in the c code which we used in Arduino mega board and raspberry PI. After changing the configuration, we saw some changes in performance. In this section, these things will be discussed. 
-
-
-
-
-
-
-
-5.8.1	Performance analysis of line follower robot
-
-Initially, we set the motor speed at 90. Though, the motor speed maximum can be 255. But if we slow the motor to 60 or 70, it can’t run because of the weight of the whole system. This object delivery system weighs 1.3 kilograms. If we set the motor speed to 100 or 150, the IR sensor could not read the sensor value so quickly, which did not work too. 
-
-5.8.2	Performance analysis of PI camera
-
-           PIcamera has some lag issues, if we increase the resolution of the video output window, the response time of the camera output is too slow. 
-           
-5.8.3	Performance analysis of servo motor
-
-The servo motor can run well if it uses max, min pulse time. Otherwise, there has a jitter issue.
-
-
-
-
-
-
-
-
-
-
-
 
