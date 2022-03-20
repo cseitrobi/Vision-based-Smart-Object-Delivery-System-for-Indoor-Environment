@@ -145,9 +145,9 @@ There we have gpiozero library that we used for the servo motor. We also set the
 5.6	Arduino Mega and Raspberry PI  connection as Serial via GPIOs
 
 We have connected a wire from A15 to RPI’s pin 18[]. In the LFR code, we declared a variable for that. We have manually tested the value of that pin after detecting the face and the command here is to stop the LFR after detecting a face. If the camera of RPI can’t detect the face, LFR will run continuously. 
-![image](https://user-images.githubusercontent.com/10431781/155857465-50678d78-9c25-4c81-ba5c-cb88d4d005a9.png)
+
 Here, the GPIO library is already imported. It can transmit data through pin 18. LFR will continue when this pin sends “LOW”.BCM follows the lower-level numbering system defined by the RPI’s Broadcom –chip brain. GPIO. BCM refers to the pins by the “Broadcom SOC channel” number. 
-![image](https://user-images.githubusercontent.com/10431781/155857469-af658174-4555-417f-8aff-5f9f22f6c9c3.png)
+
 
 5.7	Ready Object delivery system
 
