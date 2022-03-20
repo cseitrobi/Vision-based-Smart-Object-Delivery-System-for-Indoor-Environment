@@ -122,6 +122,7 @@ mkdir facial_recognition
 5.3.2 Take image by PIcamera
 
 We have created a file named “headshots_picam.py” inside the facial_recognition folder. We wrote the code for taking pictures by RPI camera as long as we want. Have to define what the person’s name is. According to this, we created a folder named “dataset” and inside this, there will be a folder according to the person’s name where the images are saved.
+
 ![image](https://user-images.githubusercontent.com/10431781/155857438-a2802835-f6c7-4ce6-a63a-4129c808b030.png)
 
 5.3.3 Train Images
@@ -156,7 +157,9 @@ In this section, we described the flowchart of the Object delivery system, how t
 5.7.1	Flowchart of Object Delivery System
 
 Initially, we enable the switch of the line follower robot and it will run by following the line. At the same time, we run our “Project.py” file and it will try to detect a known face. If the camera detects a known face, LFR will stop following line. Then, the camera will be ready to scan the QR code. If the QR code matches the specific known face, then, the servo motor will rotate back to degrees for 2 seconds to get the object. After that, the servo motor goes to its previous position. If the wrong QR code is scanned, the servo motor will not rotate. For both cases, after scanning, LFR will start to follow lines. 
+
 ![image](https://user-images.githubusercontent.com/10431781/155857480-f836df65-9f2d-4276-b261-deb183376623.png)
+
                             Fig: Flowchart of Object Delivery System
 
 
@@ -165,8 +168,12 @@ Initially, we enable the switch of the line follower robot and it will run by fo
 5.7.2 Execute the whole system 
 
 Initially, we need to run “pigpiod” and this utility runs in the background. This library controls the GPIO. Once “pigpiod” is launched, it accepts the commands from the pipe and socket interfaces. 
+
 ![image](https://user-images.githubusercontent.com/10431781/155857488-2dbc1b02-a2ae-45f0-a8dc-126cebcd9caf.png)
+
 Secondly, we moved to the facial_recognition folder from pi folder. We have a “Project.py” file. It includes the code for face recognition, QR code scan, servo motor’s operating code, RPI and Arduino combined working code.
+
 ![image](https://user-images.githubusercontent.com/10431781/155857494-a57d398d-5caf-4e4c-a49e-e1db5c8a4359.png)
+
 After executing this file from the terminal, one separate window will appear and ask for the authenticated face. After detecting the face, it’s ready to scan the QR code. Remember, there is a unique QR code for each person. If the wrong QR is scanned, the door will not open and the line following will be continued. 
 
