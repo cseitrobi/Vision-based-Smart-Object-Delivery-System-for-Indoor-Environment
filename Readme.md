@@ -130,7 +130,7 @@ After taking images, we trained these images. After training these images, some 
 
 ![image](https://user-images.githubusercontent.com/10431781/155857443-887dde06-2484-4c8a-b69a-33a9a482329b.png)
 
-![image](https://user-images.githubusercontent.com/10431781/155857446-9ddfef02-954d-41db-851a-f757c4fb813f.png)
+
 
 5.4	QR code scan with PI camera
 
@@ -140,7 +140,7 @@ Necessary packages are already installed. In the “facial_recognition” folder
 5.5	Servo motor configuration in Raspberry PI
 
 There we have gpiozero library that we used for the servo motor. We also set the minimum pulse to 0.5 milliseconds and the maximum pulse to 2.5 milliseconds. Factory is the other way of controlling the pins hardware control, not the software. We used these calculations for smooth movement of servo motor so that there won’t happen jitter issue.
-![image](https://user-images.githubusercontent.com/10431781/155857456-3aeab648-d774-4477-9d61-c6c3e537b4f1.png)
+
 
 5.6	Arduino Mega and Raspberry PI  connection as Serial via GPIOs
 
