@@ -135,7 +135,7 @@ After taking images, we trained these images. After training these images, some 
 5.4	QR code scan with PI camera
 
 Necessary packages are already installed. In the “facial_recognition” folder, we have the project.py file. After detecting the face, picam wants to scan the QR code. Initially, the camera scans for the image of the QR code. Then, read the QR code by detecting the bounding box coordinates and decoding the hidden QR code. There has a blue box around the data. This draws one and then, writes the data along with the top. If we want to stop detecting, need to press ‘q’ only.
-![image](https://user-images.githubusercontent.com/10431781/155857451-4cca12f8-e7b5-4a1d-90e9-736f108575ed.png)
+
 
 5.5	Servo motor configuration in Raspberry PI
 
