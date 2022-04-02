@@ -1,4 +1,7 @@
 # Raspberry Pi 3B+ Facial Recognition and QR code scan embedded with Arduino Mega which is used for line following.
+
+https://www.youtube.com/watch?v=0ctkLUZw3rE
+
 Hardware and software tools
 
 4.1 Design Tools
